@@ -8,10 +8,10 @@ namespace VendorAndOrderTracker.Models
     public string Title {get; set;}
     public string Description {get; set;}
     public int Price {get; set;}
-    public DateTime Date {get; set;}
+    public string Date {get; set;}
     public int Id {get;}
     private static List<Order> _orders = new List<Order>();
-    public Order(string title, string description, int price, DateTime date)
+    public Order(string title, string description, int price, string date)
     {
       Title = title;
       Description = description;

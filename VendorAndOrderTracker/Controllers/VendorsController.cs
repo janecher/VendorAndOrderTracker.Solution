@@ -39,10 +39,10 @@ namespace VendorAndOrderTracker.Controllers
     }
 
     [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResult Create(int vendorId, string title, string description, string price)
+    public ActionResult Create(int vendorId, string title, string description, string price, string date)
     {
       int priceInput = int.Parse(price);
-      DateTime dateInput = new DateTime(2020, 7, 24);
+      string dateInput = date.Substring(5,2)+"/"+date.Substring(8,2)+"/"+date.Substring(0,4);
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
       Order newOrder = new Order(title, description, priceInput, dateInput);

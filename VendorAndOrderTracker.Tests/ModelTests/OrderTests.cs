@@ -16,8 +16,7 @@ namespace VendorAndOrderTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      DateTime date = new DateTime(2020, 7, 24);
-      Order order = new Order("bread", "multigrain", 3, date);
+      Order order = new Order("bread", "multigrain", 3, "07/24/2020");
       Assert.AreEqual(typeof(Order), order.GetType());
     }
 
@@ -32,9 +31,8 @@ namespace VendorAndOrderTracker.Tests
     [TestMethod]
     public void GetAll_ReturnsOrders_OrderList()
     {
-      DateTime date = new DateTime(2020, 7, 24);
-      Order order1 = new Order("bread", "multigrain", 3, date);
-      Order order2 = new Order("bread", "white", 2, date);
+      Order order1 = new Order("bread", "multigrain", 3, "07/24/2020");
+      Order order2 = new Order("bread", "white", 2, "07/24/2020");
       List<Order> newList = new List<Order> {order1, order2};
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
@@ -43,8 +41,7 @@ namespace VendorAndOrderTracker.Tests
     [TestMethod]
     public void GetId_OrderInstantiateWithAnIdAndGetterReturns_Int()
     {
-      DateTime date = new DateTime(2020, 7, 24);
-      Order order = new Order("bread", "multigrain", 3, date);
+      Order order = new Order("bread", "multigrain", 3, "07/24/2020");
       int result = order.Id;
       Assert.AreEqual(1, result);
     }
@@ -52,9 +49,8 @@ namespace VendorAndOrderTracker.Tests
     [TestMethod]
     public void Find_ReturnsCorrectOrder_Order()
     {
-      DateTime date = new DateTime(2020, 7, 24);
-      Order order1 = new Order("bread", "multigrain", 3, date);
-      Order order2 = new Order("bread", "white", 2, date);
+      Order order1 = new Order("bread", "multigrain", 3, "07/24/2020");
+      Order order2 = new Order("bread", "white", 2, "07/24/2020");
       Order result = Order.Find(2);
       Assert.AreEqual(order2, result);
     }

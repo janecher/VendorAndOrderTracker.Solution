@@ -42,8 +42,7 @@ namespace VendorAndOrderTracker.Tests
     [TestMethod]
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {
-      DateTime date = new DateTime(2020, 7, 24);
-      Order order = new Order("bread", "multigrain", 3, date);
+      Order order = new Order("bread", "multigrain", 3, "07/24/2020");
       List<Order> ordersList = new List<Order> {order};
       Vendor newVendor = new Vendor("Some vendor", "Vendor description");
       newVendor.AddOrder(order);
