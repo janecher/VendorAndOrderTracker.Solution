@@ -48,5 +48,15 @@ namespace VendorAndOrderTracker.Tests
       int result = order.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      DateTime date = new DateTime(2020, 7, 24);
+      Order order1 = new Order("bread", "multigrain", 3, date);
+      Order order2 = new Order("bread", "white", 2, date);
+      Order result = Order.Find(2);
+      Assert.AreEqual(order2, result);
+    }
   }
 }
