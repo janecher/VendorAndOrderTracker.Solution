@@ -9,7 +9,6 @@ namespace VendorAndOrderTracker.Models
     public int Id {get;}
     public List<Order> Orders {get; set;}
     private static List<Vendor> _vendors = new List<Vendor>();
-
     public Vendor(string name, string description)
     {
       Name = name;
@@ -18,15 +17,17 @@ namespace VendorAndOrderTracker.Models
       _vendors.Add(this);
       Id = _vendors.Count;
     }
-
     public static void ClearAll()
     {
       _vendors.Clear();
     }
-
     public static List<Vendor> GetAll()
     {
       return _vendors;
+    }
+    public static Vendor Find(int searchId)
+    {
+      return _vendors[searchId-1];
     }
 
   }
