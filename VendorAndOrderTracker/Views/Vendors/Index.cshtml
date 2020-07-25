@@ -11,8 +11,9 @@
   @foreach (Vendor vendor in Model)
   {
     <h3><a href='/vendors/@vendor.Id'>@vendor.Name</a></h3>
+    <p><a href='/vendors/@vendor.Id/edit'>Update</a></p>
     <form action="/vendors/@vendor.Id" method="post">
-        <button type="submit" name="button" class="btn">Delete</button>
+      <button type="submit" name="button" class="btn">Delete</button>
     </form>
   }
   <p><a href='/'>Home</a></p>

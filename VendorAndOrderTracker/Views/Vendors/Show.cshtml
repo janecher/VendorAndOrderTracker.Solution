@@ -24,4 +24,7 @@
   <p><a href='/'>Home</a></p>
   <p><a href='/vendors'>Vendor list</a></p>
   <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add new order</a></p>
+  <form action='/vendors/@Model["vendor"].Id/orders/delete' method="post">
+    <button type="submit" name="button" class="btn">Delete all orders</button>
+  </form>
 </div>

@@ -50,7 +50,7 @@ namespace VendorAndOrderTracker.Models
     {
       Orders.Remove(order);
     }
-    public void RemoveAllOrders(Order order)
+    public void RemoveAllOrders()
     {
       Orders.Clear();
     }

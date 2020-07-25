@@ -26,7 +26,7 @@ namespace VendorAndOrderTracker.Controllers
       Vendor newVendor = new Vendor(vendorName, vendorDescription);
       return RedirectToAction("Index");
     }
-
+// посмотреть чтобы убрать делете
     [HttpPost("/vendors/delete")]
     public ActionResult DeleteAll()
     {
@@ -43,6 +43,22 @@ namespace VendorAndOrderTracker.Controllers
       model.Add("vendor", selectedVendor);
       model.Add("orders", vendorOrder);
       return View(model);
+    }
+
+    [HttpGet("/vendors/{id}/edit")]
+    public ActionResult Edit(int id)
+    {
+      Vendor vendor = Vendor.Find(id);
+      return View(vendor);
+    }
+
+    [HttpPost("/vendors/{id}/update")]
+    public ActionResult Update(int id, string vendorName, string vendorDescription)
+    {
+      Vendor vendor = Vendor.Find(id);
+      vendor.Name = vendorName;
+      vendor.Description = vendorDescription;
+      return RedirectToAction("Index");
     }
 
     [HttpPost("/vendors/{id}")]
