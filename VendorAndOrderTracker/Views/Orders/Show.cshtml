@@ -2,15 +2,14 @@
   Layout = "_Layout";
 }
 
-<div class="container">
-  <h1>Order Details: </h1>
-
-  <h2>@Model["order"].Title</h2>
-  <p>@Model["order"].Description</p>
-  <p>Price: $@Model["order"].Price</p>
-  <h3>Date: @Model["order"].Date</h3>
-
-  <a href='/vendors/@Model["vendor"].Id/orders/new'>Add new order</a>
-  <a href='/vendors/@Model["vendor"].Id'>Back to all orders</a>
-  <a href='/vendors'>Vendor list</a>
+<h3>Order Details:</h3>
+<h4>@Model["order"].Title</h4>
+<p>@Model["order"].Description</p>
+<p>Price: $@Model["order"].Price</p>
+<p>Date: @Model["order"].Date</p>
+<div class="links">
+  <a class="button" href='/vendors/@Model["vendor"].Id/orders/new'>Add new order</a>
+  <a class="button" href='/vendors/@Model["vendor"].Id'>Back to all orders</a>
+  <a class="button" href='/vendors'>Vendor list</a>
 </div>
+

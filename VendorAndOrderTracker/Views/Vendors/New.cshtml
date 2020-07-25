@@ -2,20 +2,16 @@
   Layout = "_Layout";
 }
 
-<div class="container">
-  <h1>Add new vendor</h1>
-  <form action="/vendors" method="post">
-    <div class="form-group">
-      <label for="vendorName">Vendor name</label>
-      <input id="vendorName" name="vendorName" type="text" class="form-control" required>
-    </div>
-    <div class="form-group">
-      <label for="vendorDescription">Vendor description</label>
-      <input id="vendorDescription" name="vendorDescription" type="text" class="form-control" required>
-    </div>
-    <button type="submit" class="btn">Add</button>
-  </form>
-  <p><a href="/">Home</a></p>
-  <p><a href="/vendors">Vendor list</a></p>
-</div>
+<h3>Add new vendor</h3>
+<form action="/vendors" method="post">
+  <div class="form-group">
+    <label for="vendorName">Vendor name</label>
+    <input id="vendorName" name="vendorName" type="text" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="vendorDescription">Vendor description</label>
+    <input id="vendorDescription" name="vendorDescription" type="text" class="form-control" required>
+  </div>
+  <button type="submit" class="button">Add</button>
+</form>
 

@@ -2,26 +2,24 @@
   Layout = "_Layout";
 }
 
-<div class="container">
-  <h1>Add new order to @Model.Name</h1>
-  <form action="/vendors/@Model.Id/orders" method="post">
-    <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
-    <div class="form-group">
-      <label for="title">Title</label>
-      <input id="title" name="title" type="text" class="form-control" required>
-    </div>
-    <div class="form-group">
-      <label for="description">Description</label>
-      <input id="description" name="description" type="text" class="form-control" required>
-    </div>
-    <div class="form-group">
-      <label for="price">Price</label>
-      <input id="price" name="price" type="number" min="0" class="form-control" required>
-    </div>
-    <div class="form-group">
-      <label for="date">Date</label>
-      <input id="date" name="date" type="date" class="form-control" required>
-    </div>
-    <button type="submit" class="btn">Add</button>
-  </form>
-</div>
+<h3>Add new order to @Model.Name:</h3>
+<form action="/vendors/@Model.Id/orders" method="post">
+  <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input id="title" name="title" type="text" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input id="description" name="description" type="text" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input id="price" name="price" type="number" min="0" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="date">Date</label>
+    <input id="date" name="date" type="date" class="form-control" required>
+  </div>
+  <button type="submit" class="button">Add</button>
+</form>
