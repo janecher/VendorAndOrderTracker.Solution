@@ -5,10 +5,19 @@
 
 <div class="container">
   <h3>Orders:</h3>
+  @if (@Model["orders"].Count == 0)
+  {
+    <h3>No orders yet</h3>
+  }
   <ol>
   @foreach (Order order in @Model["orders"])
   {
-    <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
+    <li>
+      <a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a>
+      <form action='/vendors/@Model["vendor"].Id/orders/@order.Id' method="post">
+        <button type="submit" name="button" class="btn">Delete</button>
+      </form>
+    </li>
   }
   </ol>
 
