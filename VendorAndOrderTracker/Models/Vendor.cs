@@ -33,5 +33,9 @@ namespace VendorAndOrderTracker.Models
     {
       Orders.Add(order);
     }
+    public static void DeleteVendor(int vendorId)
+    {
+      _vendors.RemoveAt(vendorId-1);
+    }
   }
 }

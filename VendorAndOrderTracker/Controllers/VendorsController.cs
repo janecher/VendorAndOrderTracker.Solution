@@ -27,6 +27,13 @@ namespace VendorAndOrderTracker.Controllers
       return RedirectToAction("Index");
     }
 
+    [HttpPost("/vendors/delete")]
+    public ActionResult DeleteAll()
+    {
+      Vendor.ClearAll();
+      return RedirectToAction("Index");
+    }
+
     [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
     {
@@ -36,6 +43,13 @@ namespace VendorAndOrderTracker.Controllers
       model.Add("vendor", selectedVendor);
       model.Add("orders", vendorOrder);
       return View(model);
+    }
+
+    [HttpPost("/vendors/{id}")]
+    public ActionResult Destroy(int id)
+    {
+      Vendor.DeleteVendor(id);
+      return RedirectToAction("Index");
     }
 
     [HttpPost("/vendors/{vendorId}/orders")]
