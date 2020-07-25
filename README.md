@@ -39,7 +39,7 @@ _No known bugs_
 
 ## Technologies Used
 
-  * C# .Net
+  * C# .Net Core MVC
   * Visual Studio Code
 
 ### License

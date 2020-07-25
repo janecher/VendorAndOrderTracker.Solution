@@ -21,6 +21,7 @@ namespace VendorAndOrderTracker.Models
     }
     public static void ClearAll()
     {
+      NextUniqueId = 1;
       _vendors.Clear();
     }
     public static List<Vendor> GetAll()

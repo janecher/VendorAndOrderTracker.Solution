@@ -26,7 +26,7 @@ namespace VendorAndOrderTracker.Controllers
       Vendor newVendor = new Vendor(vendorName, vendorDescription);
       return RedirectToAction("Index");
     }
-// посмотреть чтобы убрать делете
+
     [HttpPost("/vendors/delete")]
     public ActionResult DeleteAll()
     {
